@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Activities | Camp Chita Outdoors</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+  --gold:#d4a017;
+  --dark:#111827;
+  --soft:#5b6472;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#fafafa;
+  overflow-x:hidden;
+  color:#111;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);
+  border:none;
+  padding:14px 0;
+  margin-bottom:0;
+  box-shadow:0 2px 15px rgba(0,0,0,.04);
+}
+
+.navbar-brand{
+  font-weight:700;
+  color:#111 !important;
+  font-size:22px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.activities-hero{
+  padding:130px 20px 90px;
+  text-align:center;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.60),
+      rgba(0,0,0,.74)
+    ),
+    url('images/Forestation.jpeg') center/cover no-repeat;
+
+  color:#fff;
+}
+
+.hero-tag{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:50px;
+  background:rgba(212,160,23,.15);
+  color:var(--gold);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:30px;
+}
+
+.activities-hero h1{
+  font-size:72px;
+  font-weight:800;
+  letter-spacing:-4px;
+  margin-bottom:30px;
+  line-height:1;
+}
+
+.activities-hero h1 span{
+  color:var(--gold);
+}
+
+.activities-hero p{
+  max-width:900px;
+  margin:auto;
+  font-size:18px;
+  line-height:2;
+  color:rgba(255,255,255,.84);
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section{
+  padding:110px 20px;
+}
+
+.container-custom{
+  max-width:1700px;
+  margin:auto;
+}
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-heading{
+  text-align:center;
+  max-width:900px;
+  margin:0 auto 70px;
+}
+
+.section-tag{
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:50px;
+  background:rgba(212,160,23,.10);
+  color:var(--gold);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+
+.section-title{
+  font-size:58px;
+  line-height:1.05;
+  font-weight:500;
+  color:var(--dark);
+  letter-spacing:-2px;
+  margin-bottom:28px;
+}
+
+.section-title span{
+  color:var(--gold);
+}
+
+.section-text{
+  font-size:18px;
+  line-height:1.95;
+  color:var(--soft);
+}
+
+/* =========================================
+   GRID
+========================================= */
+
+.activities-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.activity{
+  background:#fff;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  transition:all .45s ease;
+  box-shadow:0 12px 35px rgba(0,0,0,.08);
+  cursor:pointer;
+}
+
+.activity:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+.activity-image-wrapper{
+  overflow:hidden;
+}
+
+.activity-img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+
+.activity:hover .activity-img{
+  transform:scale(1.06);
+}
+
+.activity-content-preview{
+  padding:24px;
+}
+
+.activity-icon{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:rgba(212,160,23,.12);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:var(--gold);
+  font-size:20px;
+
+  margin-bottom:18px;
+}
+
+.activity-title{
+  font-size:22px;
+  font-weight:700;
+  color:var(--dark);
+  margin-bottom:14px;
+  line-height:1.35;
+}
+
+.activity-preview{
+  color:var(--soft);
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(6px);
+  z-index:9998;
+  display:none;
+  animation:fadeIn .35s ease forwards;
+}
+
+/* =========================================
+   FULLSCREEN CARD
+========================================= */
+
+.activity.fullscreen{
+  position:fixed;
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%, -50%);
+
+  width:min(1000px, 78vw);
+  height:88vh;
+
+  z-index:10000;
+
+  border-radius:34px;
+
+  overflow:hidden;
+
+  background:#fff;
+
+  display:flex;
+  flex-direction:column;
+
+  animation:modalReveal .45s ease forwards;
+
+  box-shadow:0 35px 100px rgba(0,0,0,.35);
+}
+
+.activity.fullscreen:hover{
+  transform:translate(-50%, -50%);
+}
+
+.activity.fullscreen .activity-image-wrapper{
+  height:48%;
+}
+
+.activity.fullscreen .activity-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:none !important;
+}
+
+.activity.fullscreen .activity-content-preview{
+  display:none;
+}
+
+/* =========================================
+   EXPANDED CONTENT
+========================================= */
+
+.activity-content{
+  display:none;
+}
+
+.activity.fullscreen .activity-content{
+  display:block;
+  height:52%;
+  overflow-y:auto;
+  padding:42px;
+  background:#fff;
+}
+
+.activity.fullscreen h3{
+  font-size:38px;
+  font-weight:800;
+  color:var(--dark);
+  line-height:1.2;
+  margin-bottom:24px;
+}
+
+.activity.fullscreen h4{
+  font-size:22px;
+  font-weight:700;
+  margin-top:28px;
+  margin-bottom:14px;
+  color:var(--dark);
+}
+
+.activity.fullscreen p{
+  font-size:16px;
+  line-height:1.95;
+  color:var(--soft);
+  margin-bottom:20px;
+}
+
+.activity.fullscreen ul{
+  padding-left:22px;
+}
+
+.activity.fullscreen li{
+  margin-bottom:12px;
+  line-height:1.9;
+  color:var(--soft);
+}
+
+.activity.fullscreen blockquote{
+  border-left:4px solid var(--gold);
+  padding-left:18px;
+  margin:28px 0;
+  color:#444;
+  font-style:italic;
+  font-size:17px;
+  line-height:1.9;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.nav-btn,
+.close-btn{
+  position:fixed;
+  top:24px;
+
+  border:none;
+
+  color:#fff;
+
+  font-size:14px;
+  font-weight:700;
+
+  padding:12px 18px;
+
+  border-radius:50px;
+
+  cursor:pointer;
+
+  transition:all .3s ease;
+
+  z-index:10001;
+
+  backdrop-filter:blur(10px);
+}
+
+.nav-btn{
+  background:rgba(212,160,23,.92);
+}
+
+.close-btn{
+  background:rgba(255,71,87,.92);
+}
+
+.nav-btn:hover,
+.close-btn:hover{
+  transform:translateY(-2px);
+}
+
+.prev-btn{
+  right:140px;
+}
+
+.next-btn{
+  right:78px;
+}
+
+.close-btn{
+  right:20px;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.volunteer-section{
+  margin-top:100px;
+
+  background:#fff;
+
+  padding:90px 40px;
+
+  border-radius:32px;
+
+  text-align:center;
+
+  box-shadow:0 12px 35px rgba(0,0,0,.08);
+}
+
+.volunteer-section h2{
+  font-size:52px;
+  font-weight:800;
+  color:var(--dark);
+  margin-bottom:24px;
+}
+
+.volunteer-section p{
+  max-width:850px;
+  margin:auto auto 35px;
+
+  font-size:18px;
+  line-height:1.95;
+  color:var(--soft);
+}
+
+.volunteer-btn{
+  display:inline-block;
+
+  padding:18px 38px;
+
+  border-radius:50px;
+
+  background:var(--gold);
+
+  color:#fff !important;
+
+  text-decoration:none !important;
+
+  font-weight:700;
+
+  letter-spacing:1px;
+
+  transition:all .35s ease;
+}
+
+.volunteer-btn:hover{
+  transform:translateY(-4px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+  background:#0b0b0b;
+  color:#aaa;
+  text-align:center;
+  padding:40px 20px;
+  margin-top:120px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes modalReveal{
+  from{
+    opacity:0;
+    transform:translate(-50%, -46%);
+  }
+  to{
+    opacity:1;
+    transform:translate(-50%, -50%);
+  }
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1400px){
+
+  .activities-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+
+@media(max-width:1200px){
+
+  .activities-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .activity.fullscreen{
+    width:88vw;
+  }
+}
+
+@media(max-width:992px){
+
+  .activities-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+
+  .activities-hero{
+    padding:100px 20px 70px;
+  }
+
+  .activities-hero h1{
+    font-size:44px;
+    line-height:1.1;
+  }
+
+  .activities-hero p{
+    font-size:16px;
+    line-height:1.8;
+  }
+
+  .section{
+    padding:90px 20px;
+  }
+
+  .section-title{
+    font-size:38px;
+  }
+
+  .section-text{
+    font-size:16px;
+  }
+
+  .activities-grid{
+    grid-template-columns:1fr;
+  }
+
+  .activity.fullscreen{
+    width:95%;
+    height:90vh;
+    border-radius:24px;
+  }
+
+  .activity.fullscreen .activity-image-wrapper{
+    height:260px;
+  }
+
+  .activity.fullscreen .activity-content{
+    height:calc(90vh - 260px);
+    padding:26px;
+  }
+
+  .activity.fullscreen h3{
+    font-size:30px;
+  }
+
+  .activity.fullscreen h4{
+    font-size:19px;
+  }
+
+  .activity.fullscreen p,
+  .activity.fullscreen li{
+    font-size:15px;
+  }
+
+  .volunteer-section{
+    padding:55px 25px;
+  }
+
+  .volunteer-section h2{
+    font-size:36px;
+  }
+
+  .volunteer-section p{
+    font-size:16px;
+  }
+
+  .prev-btn{
+    right:125px;
+  }
+
+  .next-btn{
+    right:70px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      Camp Chita Outdoors
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="activities-hero">
+
+  <div class="hero-tag">
+    Adventure • Nature • Conservation
+  </div>
+
+  <h1>
+    Camp Chita
+    <span>Activities</span>
+  </h1>
+
+  <p>
+    Discover unforgettable outdoor experiences in the Luano Valley — from eco-camping beneath the stars to wildlife adventures, hiking trails, cultural storytelling, canoe excursions, and immersive conservation experiences.
+  </p>
+
+</section>
+
+<!-- ACTIVITIES -->
+<section class="section">
+
+  <div class="container-custom">
+
+    <div class="section-heading">
+
+      <div class="section-tag">
+        Outdoor Experiences
+      </div>
+
+      <h2 class="section-title">
+        Explore Nature Through
+        <span>Adventure</span>
+      </h2>
+
+      <p class="section-text">
+        Every activity at Camp Chita is designed to reconnect visitors with nature while promoting conservation, sustainability, community engagement, and unforgettable wilderness experiences.
+      </p>
+
+    </div>
+
+    <div class="activities-grid">
+
+      <!-- CARD -->
+      <div class="activity">
+
+        <div class="activity-image-wrapper">
+          <img src="images/news-image1.jpg" class="activity-img">
+        </div>
+
+        <div class="activity-content-preview">
+          <div class="activity-icon">
+            <i class="fa fa-tree"></i>
+          </div>
+
+          <div class="activity-title">
+            Eco-Camping
+          </div>
+
+          <p class="activity-preview">
+            Experience eco-friendly camping beneath Zambia’s spectacular night skies.
+          </p>
+        </div>
+
+        <div class="activity-content">
+
+          <button class="nav-btn prev-btn">⟨</button>
+          <button class="nav-btn next-btn">⟩</button>
+          <button class="close-btn">✖</button>
+
+          <h3>Eco-Camping Experience</h3>
+
+          <p>
+            Sleep under the African sky with eco-conscious facilities designed to immerse you in the natural beauty of the Luano Valley.
+          </p>
+
+          <blockquote>
+            “True peace is found where the stars feel close enough to touch.”
+          </blockquote>
+
+          <h4>Highlights</h4>
+
+          <ul>
+            <li>Eco-friendly campsites</li>
+            <li>Solar-powered facilities</li>
+            <li>Campfire storytelling</li>
+            <li>Scenic wilderness views</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="activity">
+
+        <div class="activity-image-wrapper">
+          <img src="images/Canoeing Safari.jpg" class="activity-img">
+        </div>
+
+        <div class="activity-content-preview">
+          <div class="activity-icon">
+            <i class="fa fa-water"></i>
+          </div>
+
+          <div class="activity-title">
+            Fishing & Canoeing
+          </div>
+
+          <p class="activity-preview">
+            Glide peacefully along the Lunsemfwa River surrounded by untouched nature.
+          </p>
+        </div>
+
+        <div class="activity-content">
+
+          <button class="nav-btn prev-btn">⟨</button>
+          <button class="nav-btn next-btn">⟩</button>
+          <button class="close-btn">✖</button>
+
+          <h3> Adventures</h3>
+
+          <p>
+            Guided canoe experiences perfect for nature lovers, photographers, and families.
+          </p>
+
+          <h4>Included</h4>
+
+          <ul>
+            <li>Guided canoe routes</li>
+            <li>Safety equipment</li>
+            <li>Birdwatching opportunities</li>
+            <li>Photography stops</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="activity">
+
+        <div class="activity-image-wrapper">
+          <img src="images/Kasongo.jpg" class="activity-img">
+        </div>
+
+        <div class="activity-content-preview">
+          <div class="activity-icon">
+            <i class="fa fa-paw"></i>
+          </div>
+
+          <div class="activity-title">
+            Game Viewing
+          </div>
+
+          <p class="activity-preview">
+            Explore the valley through immersive wildlife encounters and guided safaris.
+          </p>
+        </div>
+
+        <div class="activity-content">
+
+          <button class="nav-btn prev-btn">⟨</button>
+          <button class="nav-btn next-btn">⟩</button>
+          <button class="close-btn">✖</button>
+
+          <h3>Wildlife Viewing</h3>
+
+          <p>
+            Discover the incredible biodiversity of the Luano Valley with expert-guided wildlife experiences.
+          </p>
+
+          <h4>Species</h4>
+
+          <ul>
+            <li>Elephants</li>
+            <li>Antelope species</li>
+            <li>Birdlife</li>
+            <li>River wildlife</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="activity">
+
+        <div class="activity-image-wrapper">
+          <img src="images/Nature Photography.jpg" class="activity-img">
+        </div>
+
+        <div class="activity-content-preview">
+          <div class="activity-icon">
+            <i class="fa fa-camera"></i>
+          </div>
+
+          <div class="activity-title">
+            Nature Photography
+          </div>
+
+          <p class="activity-preview">
+            Explore scenic hiking routes with breathtaking valley panoramas.
+          </p>
+        </div>
+
+        <div class="activity-content">
+
+          <button class="nav-btn prev-btn">⟨</button>
+          <button class="nav-btn next-btn">⟩</button>
+          <button class="close-btn">✖</button>
+
+          <h3>Nature Photography</h3>
+
+          <p>
+            Enjoy guided hikes across scenic trails, riverbanks, and elevated viewpoints.
+          </p>
+
+          <h4>Highlights</h4>
+
+          <ul>
+            <li>Panoramic viewpoints</li>
+            <li>Photography trails</li>
+            <li>Birdwatching hotspots</li>
+            <li>Sunrise hikes</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="activity">
+
+        <div class="activity-image-wrapper">
+          <img src="images/001 (20).jpg" class="activity-img">
+        </div>
+
+        <div class="activity-content-preview">
+          <div class="activity-icon">
+            <i class="fa fa-binoculars"></i>
+          </div>
+
+          <div class="activity-title">
+            Hiking Trails
+          </div>
+
+          <p class="activity-preview">
+            Explore scenic hiking routes with breathtaking valley panoramas.
+          </p>
+        </div>
+
+        <div class="activity-content">
+
+          <button class="nav-btn prev-btn">⟨</button>
+          <button class="nav-btn next-btn">⟩</button>
+          <button class="close-btn">✖</button>
+
+          <h3>Hiking & Birdwatching</h3>
+
+          <p>
+            Enjoy guided hikes across scenic trails, riverbanks, and elevated viewpoints.
+          </p>
+
+          <h4>Highlights</h4>
+
+          <ul>
+            <li>Panoramic viewpoints</li>
+            <li>Photography trails</li>
+            <li>Birdwatching hotspots</li>
+            <li>Sunrise hikes</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="activity">
+
+        <div class="activity-image-wrapper">
+          <img src="images/Campfire Storytelling.png" class="activity-img">
+        </div>
+
+        <div class="activity-content-preview">
+          <div class="activity-icon">
+            <i class="fa fa-fire"></i>
+          </div>
+
+          <div class="activity-title">
+           Tales by the Campfire
+          </div>
+
+          <p class="activity-preview">
+            Folklore and many other stories around the camfire.
+          </p>
+        </div>
+
+        <div class="activity-content">
+
+          <button class="nav-btn prev-btn">⟨</button>
+          <button class="nav-btn next-btn">⟩</button>
+          <button class="close-btn">✖</button>
+
+          <h3>Tales By The Campfire</h3>
+
+          <p>
+            Enjoy guided hikes across scenic trails, riverbanks, and elevated viewpoints.
+          </p>
+
+          <h4>Highlights</h4>
+
+          <ul>
+            <li>Panoramic viewpoints</li>
+            <li>Photography trails</li>
+            <li>Birdwatching hotspots</li>
+            <li>Sunrise hikes</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="activity">
+
+        <div class="activity-image-wrapper">
+          <img src="images/Community_Outreach.jpg" class="activity-img">
+        </div>
+
+        <div class="activity-content-preview">
+          <div class="activity-icon">
+            <i class="fa fa-handshake"></i>
+          </div>
+
+          <div class="activity-title">
+            Community Outreach
+          </div>
+
+          <p class="activity-preview">
+            Explore scenic hiking routes with breathtaking valley panoramas.
+          </p>
+        </div>
+
+        <div class="activity-content">
+
+          <button class="nav-btn prev-btn">⟨</button>
+          <button class="nav-btn next-btn">⟩</button>
+          <button class="close-btn">✖</button>
+
+          <h3>Community Outreach</h3>
+
+          <p>
+            Enjoy guided hikes across scenic trails, riverbanks, and elevated viewpoints.
+          </p>
+
+          <h4>Highlights</h4>
+
+          <ul>
+            <li>Panoramic viewpoints</li>
+            <li>Photography trails</li>
+            <li>Birdwatching hotspots</li>
+            <li>Sunrise hikes</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="activity">
+
+        <div class="activity-image-wrapper">
+          <img src="images/Stargazing.png" class="activity-img">
+        </div>
+
+        <div class="activity-content-preview">
+          <div class="activity-icon">
+            <i class="fa fa-star"></i>
+          </div>
+
+          <div class="activity-title">
+            Stargazing
+          </div>
+
+          <p class="activity-preview">
+            Experience Zambia’s spectacular star-filled skies and astronomy storytelling.
+          </p>
+        </div>
+
+        <div class="activity-content">
+
+          <button class="nav-btn prev-btn">⟨</button>
+          <button class="nav-btn next-btn">⟩</button>
+          <button class="close-btn">✖</button>
+
+          <h3>Stargazing Nights – Stories in the Sky</h3>
+
+          <p>
+            Enjoy unforgettable astronomy experiences away from city lights. Guided astronomy sessions under Zambia’s clear skies & discover constellations, planets, and myths that connect us to the cosmos.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="volunteer-section">
+
+      <h2>
+        Volunteer at Camp Chita
+      </h2>
+
+      <p>
+        Become part of a movement dedicated to conservation, sustainable tourism, education, and environmental stewardship in Zambia’s wilderness.
+      </p>
+
+      <a href="volunteer.html" class="volunteer-btn">
+        Become A Volunteer
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- OVERLAY -->
+<div class="overlay"></div>
+
+<!-- FOOTER -->
+<footer>
+
+  <h4 style="color:#fff;margin-bottom:10px;">
+    Camp Chita Outdoors
+  </h4>
+
+  <p>
+    Conservation • Community • Adventure
+  </p>
+
+</footer>
+
+<script>
+
+const overlay = document.querySelector('.overlay');
+const activities = document.querySelectorAll('.activity');
+
+function openActivity(index){
+
+  activities.forEach(activity => {
+    activity.classList.remove('fullscreen');
+  });
+
+  const activeCard = activities[index];
+
+  activeCard.classList.add('fullscreen');
+
+  overlay.style.display = 'block';
+
+  const prevBtn = activeCard.querySelector('.prev-btn');
+  const nextBtn = activeCard.querySelector('.next-btn');
+  const closeBtn = activeCard.querySelector('.close-btn');
+
+  prevBtn.onclick = () => {
+    openActivity((index - 1 + activities.length) % activities.length);
+  };
+
+  nextBtn.onclick = () => {
+    openActivity((index + 1) % activities.length);
+  };
+
+  closeBtn.onclick = () => {
+    closeActivity();
+  };
+}
+
+function closeActivity(){
+
+  activities.forEach(activity => {
+    activity.classList.remove('fullscreen');
+  });
+
+  overlay.style.display = 'none';
+}
+
+activities.forEach((activity, index) => {
+
+  activity.addEventListener('click', (e) => {
+
+    if(
+      e.target.classList.contains('close-btn') ||
+      e.target.classList.contains('prev-btn') ||
+      e.target.classList.contains('next-btn')
+    ){
+      return;
+    }
+
+    openActivity(index);
+  });
+});
+
+overlay.addEventListener('click', closeActivity);
+
+document.addEventListener('keydown', (e) => {
+  if(e.key === "Escape"){
+    closeActivity();
+  }
+});
+
+</script>
+
+</body>
+</html>

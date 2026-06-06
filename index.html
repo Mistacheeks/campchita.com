@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camp Chita Outdoors | Eco Tourism</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    :root{
+    --gold:#d4a017; --dark:#0f172a; --muted:#6b7280; --bg:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:'Inter',sans-serif;scroll-behavior:smooth;background:#fff;color:#111}
+    .section{padding:100px 20px}
+    .container{max-width:1200px;margin:0 auto}
+
+    /* ===== GLOBAL ===== */
+body { font-family: 'Poppins', sans-serif; }
+.section-padding { padding: 80px 20px; }
+
+/* Fix anchor scroll offset */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  z-index: 999;
+}
+
+.navbar-brand {
+  display:flex;
+  align-items:center;
+  color:#000 !important;
+}
+
+.navbar-brand img {
+  height:40px;
+  margin-right:10px;
+}
+
+.navbar-nav li a { color:#000 !important; }
+.navbar-nav li a.active { color:#d4a017 !important; }
+
+/* ===== HERO ===== */
+.hero {
+  background:url('images/slider1.jpg') center/cover no-repeat;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
+
+/* ===== ABOUT ===== */
+#about {
+  background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.75)),
+             url('images/28.jpg') center/cover no-repeat;
+  color:#fff;
+}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.about-grid img {
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* ===== EXPERIENCES ===== */
+.experience-card {
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 4px 15px rgba(0,0,0,0.4);
+  margin-bottom:20px;
+}
+
+.experience-card img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.experience-card .content {
+  padding:5px;
+}
+
+/* ===== AMENITIES ===== */
+.amenities-section {
+  background:
+    linear-gradient(rgba(245, 242, 242, 0.9), rgba(252, 248, 248, 0.95)),
+    url('images/12315.jpg') center/cover no-repeat;
+}
+
+.amenities i {
+  font-size:25px;
+  color:#d4a017;
+  margin-right:8px;
+  padding-bottom: 25px;
+}
+    /* NAV */
+   
+    .navbar{
+        position:fixed;
+        top:0;
+        width:100%;
+        z-index:1000;
+        background:rgba(255,255,255,.92);
+        backdrop-filter:blur(12px);
+        border:none;
+        transition:all .35s ease;
+    }
+
+    .nav-wrapper{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        min-height:78px;
+    }
+
+    /* LOGO */
+    .navbar-brand{
+        font-size:22px;
+        font-weight:600;
+        color:#111827;
+        font-family:'Montserrat',sans-serif;
+        letter-spacing:-0.5px;
+    }
+
+    /* LINKS */
+    .nav-links{
+        display:flex;
+        align-items:center;
+        gap:35px;
+        list-style:none;
+        margin:0;
+        padding:0;
+    }
+
+    .nav-links li a{
+        text-decoration:none;
+        color:#1f2937;
+        font-weight:600;
+        font-size:15px;
+        transition:all .3s ease;
+        position:relative;
+    }
+
+    .nav-links li a:hover{
+        color:#d4a017;
+    }
+
+    .nav-links li a::after{
+        content:"";
+        position:absolute;
+        left:0;
+        bottom:-6px;
+        width:0;
+        height:2px;
+        background:#d4a017;
+        transition:width .3s ease;
+    }
+
+    .nav-links li a:hover::after{
+        width:100%;
+    }
+
+    /* ===== SCROLLED NAVBAR EFFECT ===== */
+
+.navbar{
+    transition:
+        background .35s ease,
+        box-shadow .35s ease,
+        backdrop-filter .35s ease;
+}
+
+/* ACTIVE ON SCROLL */
+.navbar.navbar-scrolled{
+
+    background:rgba(255,255,255,.97);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 14px 40px rgba(30,30,30,.22),
+    0 4px 14px rgba(0,0,0,.10);
+
+    border-bottom:1px solid rgba(80,80,80,.08);
+}
+
+    /* MOBILE TOGGLE */
+    .menu-toggle{
+        display:none;
+        flex-direction:column;
+        cursor:pointer;
+        gap:5px;
+    }
+
+    .menu-toggle span{
+        width:28px;
+        height:3px;
+        border-radius:50px;
+        background:#111827;
+        transition:all .35s ease;
+    }
+
+    /* ANIMATION */
+    .menu-toggle.active span:nth-child(1){
+        transform:rotate(45deg) translateY(11px);
+    }
+
+    .menu-toggle.active span:nth-child(2){
+        opacity:0;
+    }
+
+    .menu-toggle.active span:nth-child(3){
+        transform:rotate(-45deg) translateY(-11px);
+    }
+
+    /* MOBILE MENU */
+    @media(max-width:992px){
+
+        .menu-toggle{
+            display:flex;
+        }
+
+        .nav-links{
+            position:absolute;
+            top:78px;
+            left:0;
+            width:100%;
+            background:rgba(255,255,255,.98);
+            backdrop-filter:blur(16px);
+
+            flex-direction:column;
+            align-items:center;
+            gap:25px;
+
+            padding:35px 0;
+
+            max-height:0;
+            overflow:hidden;
+
+            transition:all .45s ease;
+            box-shadow:0 18px 40px rgba(0,0,0,.08);
+        }
+
+        .nav-links.active{
+            max-height:500px;
+        }
+
+        .nav-links li a{
+            font-size:17px;
+        }
+    }
+
+    /* LANDING */
+    .landing{height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('images/slider1.jpg') center/cover no-repeat}
+    .landing h1{font-size:56px;font-weight:700;letter-spacing:.5px}
+    .landing p{max-width:700px;opacity:.9}
+    .enter-btn{margin-top:24px;padding:14px 34px;background:var(--gold);border:none;color:#fff;font-weight:600;letter-spacing:.3px}
+
+        /* LANDING CONTENT */
+    .landing-overlay-content{
+        text-align:center;
+        animation:landingFade 1.8s ease forwards;
+        transform:translateY(40px);
+        opacity:0;
+    }
+
+    @keyframes landingFade{
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+
+/* TITLE */
+.landing-title{
+    margin:0;
+    line-height:.95;
+    font-family:'Montserrat',sans-serif;
+    font-weight:800;
+    letter-spacing:-2px;
+}
+
+.landing-title .camp{
+    color:#404040;
+    font-size:92px;
+}
+
+.landing-title .chita{
+    color:#d4a017;
+    font-size:92px;
+}
+
+/* SUBTITLE */
+.landing-subtitle{
+    margin-top:18px;
+    color:#fff;
+    font-size:22px;
+    font-weight:300;
+    letter-spacing:5px;
+    font-family:'Montserrat',sans-serif;
+    text-transform:capitalize;
+    opacity:.92;
+}
+
+.camp{
+    color:#404040;
+    -webkit-text-stroke: 1px rgba(220,220,220,.85);
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.25),
+        0 0 1px rgba(255,255,255,.35);
+}
+
+.chita{
+    color:#d4a017;
+    -webkit-text-stroke: 1.2px #404040;
+    text-stroke: 1.2px #404040;
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.22);
+}
+
+/* BUTTON */
+.enter-btn{
+    margin-top:35px;
+    padding:16px 38px;
+    border:none;
+    border-radius:50px;
+    background:#d4a017;
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:capitalize;
+    transition:all .35s ease;
+    box-shadow:0 10px 30px rgba(212,160,23,.28);
+}
+
+.enter-btn:hover{
+    transform:translateY(-4px);
+    background:#bf8f11;
+    box-shadow:0 14px 35px rgba(212,160,23,.4);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .landing-title .camp,
+    .landing-title .chita{
+        font-size:54px;
+    }
+
+    .landing-subtitle{
+        font-size:14px;
+        letter-spacing:3px;
+        padding:0 15px;
+    }
+
+    .enter-btn{
+        padding:14px 28px;
+        font-size:13px;
+    }
+
+}
+
+    /* HERO PARALLAX STACK */
+    .parallax{height:85vh;background-attachment:fixed;background-size:cover;background-position:center;position:relative}
+    .parallax::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.35))}
+    .p1{background-image:url('images/slider.jpg')}
+    .p2{background-image:url('images/Mabuyu.jpg')}
+    .p3{background-image:url('images/Slider3.png')}
+    .p4{background-image:url('images/slider4.png')}
+    .p5{background-image:url('images/Lunsemfwa\ Riverbank\ Wildlife.jpg')}
+
+    /* PARALLAX TEXT OVERLAY */
+/* IMPORT MODERN FONT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap');
+
+/* PARALLAX TEXT OVERLAY */
+
+.camp{
+    color:#404040;
+    -webkit-text-stroke: 1px rgba(220,220,220,.85);
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.25),
+        0 0 1px rgba(255,255,255,.35);
+}
+
+.chita{
+    color:#d4a017;
+    -webkit-text-stroke: 1.2px #404040;
+    text-stroke: 1.2px #404040;
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.22);
+}
+.parallax-content{
+    position:absolute;
+    bottom:12%;
+    left:7%;
+    z-index:3;
+    color:#fff;
+
+    opacity:0;
+    transform:translateY(80px);
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s cubic-bezier(.22,.61,.36,1);
+}
+
+/* ACTIVATED ON SCROLL */
+.parallax-content.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.parallax-title{
+    margin:0;
+    line-height:.90;
+    font-family:'Montserrat',sans-serif;
+    font-weight:600;
+    letter-spacing:-2px;
+    text-transform:uppercase;
+}
+
+.parallax-title .camp{
+    color:#404040; /* charcoal grey */
+    font-size:82px;
+}
+
+.parallax-title .chita{
+    color:#d4a017; /* mustard */
+    font-size:82px;
+}
+
+.parallax-activity{
+    margin-top:14px;
+    font-size:28px;
+    font-weight:300;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    font-family:'Montserrat',sans-serif;
+    color:#ffffff;
+    opacity:.92;
+}
+
+/* OPTIONAL SOFT GLOW */
+.parallax-content::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-15px;
+    width:120px;
+    height:3px;
+    background:#d4a017;
+    border-radius:50px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .parallax-content{
+        left:6%;
+        bottom:10%;
+    }
+
+    .parallax-title .camp,
+    .parallax-title .chita{
+        font-size:48px;
+    }
+
+    .parallax-activity{
+        font-size:16px;
+        letter-spacing:3px;
+    }
+}
+@media(max-width:768px){
+    .parallax-content{
+        left:5%;
+        right:5%;
+    }
+
+    .parallax-title .camp,
+    .parallax-title .chita{
+        font-size:42px;
+    }
+
+    .parallax-activity{
+        font-size:22px;
+    }
+}
+
+.btn-primary{
+    background:#d4a017;
+    border:none;
+    padding:12px 26px;
+    border-radius:40px;
+    font-weight:600;
+    letter-spacing:.5px;
+    transition:all .35s ease;
+    box-shadow:0 8px 25px rgba(212,160,23,.25);
+}
+
+.btn-primary:hover{
+    background:#bf8f11;
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(212,160,23,.35);
+}
+
+    /* SECTION TITLES */
+    .section h2{font-weight:700;margin-bottom:10px}
+    .lead{color:var(--muted);max-width:820px;margin:0 auto 20px}
+
+    /* ABOUT */
+    .about{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
+    .about img{width:100%;border-radius:16px}
+    @media(max-width:900px){.about{grid-template-columns:1fr}}/* ===== ABOUT MOBILE OPTIMIZATION ===== */
+
+@media(max-width:992px){
+
+    #about{
+        padding:80px 24px !important;
+    }
+
+    #about > div{
+        flex-direction:column;
+        gap:50px !important;
+        text-align:center;
+    }
+
+    /* LOGO */
+    #about img{
+        max-width:180px !important;
+    }
+
+    /* TEXT COLUMN */
+    #about div[style*="flex: 2"]{
+        text-align:center !important;
+    }
+
+    /* MAIN TITLE */
+    #about h2{
+        font-size:38px !important;
+        line-height:1.15;
+        margin-bottom:25px !important;
+    }
+
+    /* SUBHEADINGS */
+    #about h3{
+        font-size:24px !important;
+        margin-top:35px;
+        margin-bottom:18px !important;
+    }
+
+    /* BODY TEXT */
+    #about p{
+        font-size:16px !important;
+        line-height:1.9 !important;
+        padding:0 2px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media(max-width:576px){
+
+    #about{
+        padding:70px 20px !important;
+    }
+
+    #about h2{
+        font-size:32px !important;
+    }
+
+    #about h3{
+        font-size:21px !important;
+    }
+
+    #about p{
+        font-size:15px !important;
+        line-height:1.85 !important;
+    }
+
+    #about img{
+        max-width:150px !important;
+    }
+}
+
+
+    /* EXPERIENCES */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);background:#fff}
+    .card img{width:100%;height:220px;object-fit:cover}
+    .card .body{padding:18px}
+    .btn-primary{background:var(--gold);border:none}
+    
+    /* ===== EXPERIENCES HEADER ===== */
+
+    .experience-header{
+        max-width:900px;
+        margin:0 auto 70px auto;
+        text-align:center;
+    }
+
+    .experience-tag{
+        display:inline-block;
+        padding:10px 22px;
+        border-radius:30px;
+        background:rgba(212,160,23,.12);
+        color:#d4a017;
+        font-size:13px;
+        font-weight:600;
+        letter-spacing:3px;
+        text-transform:uppercase;
+        margin-bottom:25px;
+        font-family:'Montserrat',sans-serif;
+    }
+
+    .experience-title{
+        font-size:58px;
+        line-height:1.05;
+        font-weight:600;
+        margin-bottom:28px;
+        color:#111827;
+        letter-spacing:-2px;
+        font-family:'Montserrat',sans-serif;
+    }
+
+    .experience-title span{
+        color:#d4a017;
+        position:relative;
+    }
+
+    .experience-title span::after{
+        content:"";
+        position:absolute;
+        left:0;
+        bottom:-8px;
+        width:100%;
+        height:4px;
+        background:#d4a017;
+        border-radius:50px;
+        opacity:.35;
+    }
+
+    .experience-intro{
+        font-size:19px;
+        line-height:1.9;
+        color:#5b6472;
+        font-weight:300;
+        max-width:820px;
+        margin:0 auto;
+    }
+
+/* SECTION BACKGROUND */
+    #experiences{
+        background:
+        linear-gradient(
+            rgba(255,255,255,.96),
+            rgba(255,255,255,.98)
+        ),
+        url('images/12315.jpg') center/cover no-repeat;
+    }
+
+/* EXPERIENCE CARDS */
+    .experience-card{
+        border-radius:10px;
+        overflow:hidden;
+        background:#fff;
+        transition:all .45s ease;
+        box-shadow:
+            0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .experience-card:hover{
+        transform:translateY(-10px);
+        box-shadow:
+            0 20px 45px rgba(0,0,0,.14);
+    }
+
+    .experience-card img{
+        width:100%;
+        height:260px;
+        object-fit:cover;
+        transition:transform .8s ease;
+    }
+
+    .experience-card:hover img{
+        transform:scale(1.06);
+    }
+
+    .experience-card .content{
+        padding:24px;
+        background:#fff;
+    }
+
+    .experience-card h4{
+        font-size:24px;
+        font-weight:600;
+        margin:0;
+        color:#1f2937;
+        font-family:'Montserrat',sans-serif;
+        letter-spacing:-0.5px;
+    }
+
+    /* BUTTON */
+    #experiences .btn-primary{
+        margin-top:40px;
+        padding:15px 34px;
+        border-radius:50px;
+        font-weight:600;
+        letter-spacing:1px;
+        background:#d4a017;
+        border:none;
+        transition:all .35s ease;
+    }
+
+    #experiences .btn-primary:hover{
+        transform:translateY(-3px);
+        background:#bf8f11;
+    }
+
+    /* MOBILE */
+    @media(max-width:768px){
+
+        .experience-title{
+            font-size:40px;
+        }
+
+        .experience-intro{
+            font-size:16px;
+            line-height:1.8;
+        }
+
+        .experience-card img{
+            height:220px;
+        }
+
+        .experience-card h4{
+            font-size:20px;
+        }
+    }
+        @media(max-width:900px){.cards{grid-template-columns:1fr}}
+
+        /* =========================================
+                    AMENITIES SECTION
+        ========================================= */
+
+        .amenities-section{
+        padding:110px 20px;
+        background:#fff;
+        }
+
+        .amenities-grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:24px;
+        }
+
+        .amenity-card{
+        background:#fafafa;
+        border-radius:10px;
+        padding:36px 28px;
+
+        text-align:center;
+
+        transition:all .4s ease;
+
+        border:1px solid rgba(0,0,0,.04);
+
+        min-height:280px;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        }
+
+        .amenity-card:hover{
+        transform:translateY(-8px);
+        box-shadow:0 18px 40px rgba(0,0,0,.08);
+        }
+
+        .amenity-icon{
+        width:78px;
+        height:78px;
+
+        border-radius:50%;
+
+        background:rgba(212,160,23,.12);
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        margin-bottom:24px;
+
+        flex-shrink:0;
+        }
+
+        .amenity-icon i{
+        font-size:30px;
+        color:var(--gold);
+        }
+
+        .amenity-card h3{
+        font-size:22px;
+        font-weight:600;
+        color:var(--dark);
+
+        margin-bottom:18px;
+
+        line-height:1.3;
+        }
+
+        .amenity-card p{
+        font-size:15px;
+        line-height:1.8;
+        color:var(--soft);
+        }
+
+/* =========================================
+   GALLERY PREVIEW SECTION
+========================================= */
+
+.gallery-preview-section{
+    position:relative;
+    padding:140px 20px;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            rgba(6,10,14,.72),
+            rgba(6,10,14,.82)
+        ),
+        url('images/Polaris Stargazing.jpg') center/cover no-repeat;
+
+    text-align:center;
+}
+
+.gallery-preview-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(212,160,23,.12),
+            transparent 55%
+        );
+}
+
+.gallery-preview-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.gallery-preview-tag{
+    display:inline-block;
+
+    padding:10px 24px;
+
+    border-radius:50px;
+
+    background:rgba(212,160,23,.14);
+
+    color:#d4a017;
+
+    font-size:13px;
+    font-weight:700;
+
+    letter-spacing:3px;
+    text-transform:uppercase;
+
+    margin-bottom:28px;
+
+    font-family:'Montserrat',sans-serif;
+}
+
+.gallery-preview-title{
+    font-size:68px;
+    line-height:1.05;
+
+    font-weight:800;
+
+    color:#fff;
+
+    margin-bottom:28px;
+
+    letter-spacing:-2px;
+
+    font-family:'Montserrat',sans-serif;
+}
+
+.gallery-preview-title span{
+    color:#d4a017;
+}
+
+.gallery-preview-text{
+    font-size:19px;
+    line-height:1.9;
+
+    color:rgba(255,255,255,.82);
+
+    max-width:760px;
+
+    margin:0 auto 45px auto;
+}
+
+.gallery-preview-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:18px 38px;
+
+    border-radius:60px;
+
+    background:#d4a017;
+
+    color:#fff;
+
+    font-size:14px;
+    font-weight:700;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    text-decoration:none;
+
+    transition:all .35s ease;
+
+    box-shadow:
+        0 14px 35px rgba(212,160,23,.28);
+}
+
+.gallery-preview-btn:hover{
+    background:#bf8f11;
+
+    transform:translateY(-4px);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    box-shadow:
+        0 18px 45px rgba(212,160,23,.38);
+}
+
+.gallery-preview-btn i{
+    transition:transform .35s ease;
+}
+
+.gallery-preview-btn:hover i{
+    transform:translateX(4px);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .gallery-preview-section{
+        padding:100px 20px;
+    }
+
+    .gallery-preview-title{
+        font-size:42px;
+    }
+
+    .gallery-preview-text{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .gallery-preview-btn{
+        width:100%;
+        justify-content:center;
+
+        padding:16px 24px;
+
+        font-size:13px;
+    }
+}
+
+        /* ===== MAP SECTION ===== *//* ===== MAP SECTION ===== */
+
+.map-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    margin-top:50px;
+}
+
+/* CARD */
+.map-card{
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.08);
+    transition:all .4s ease;
+    display:flex;
+    flex-direction:column;
+}
+
+.map-card:hover{
+    transform:translateY(-6px);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.14);
+}
+
+/* MAP + IMAGE SAME SIZE */
+.map-card iframe,
+.map-card img{
+    width:100%;
+    height:420px;
+    border:none;
+    object-fit:cover;
+    display:block;
+}
+
+/* BUTTON AREA */
+.map-card .btn{
+    margin:24px;
+    align-self:center;
+}
+
+/* SECTION TITLE */
+.map-section-title{
+    font-size:56px;
+    font-weight:800;
+    margin-bottom:20px;
+    font-family:'Montserrat',sans-serif;
+    letter-spacing:-2px;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+
+    .map-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .map-card iframe,
+    .map-card img{
+        height:340px;
+    }
+}
+
+@media(max-width:576px){
+
+    .map-card iframe,
+    .map-card img{
+        height:280px;
+    }
+
+    .map-card{
+        border-radius:18px;
+    }
+}
+
+
+/* ===== BOOKING SECTION ===== */
+
+.booking-section{
+    position:relative;
+    padding:130px 20px;
+    background:
+        linear-gradient(
+            rgba(8,12,18,.82),
+            rgba(8,12,18,.88)
+        ),
+        url('images/Monkey Sunset.jpg') center/cover no-repeat;
+    overflow:hidden;
+}
+
+.booking-overlay{
+    position:absolute;
+    inset:0;
+    backdrop-filter:blur(2px);
+}
+
+.booking-wrapper{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+}
+
+/* ===== LEFT CONTENT ===== */
+
+.booking-tag{
+    display:inline-block;
+    padding:10px 24px;
+    border-radius:50px;
+    background:rgba(212,160,23,.14);
+    color:#d4a017;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:30px;
+    font-family:'Montserrat',sans-serif;
+}
+
+.booking-title{
+    font-size:64px;
+    line-height:1.05;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:30px;
+    letter-spacing:-2px;
+    font-family:'Montserrat',sans-serif;
+}
+
+.booking-title span{
+    color:#d4a017;
+    position:relative;
+}
+
+.booking-title span::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:100%;
+    height:4px;
+    background:#d4a017;
+    border-radius:50px;
+    opacity:.35;
+}
+
+.booking-description{
+    font-size:18px;
+    line-height:1.9;
+    color:rgba(255,255,255,.78);
+    margin-bottom:40px;
+    max-width:700px;
+}
+
+/* FEATURES */
+.booking-features{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.booking-feature{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:#fff;
+    font-size:17px;
+}
+
+.booking-feature i{
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(212,160,23,.12);
+    color:#d4a017;
+    font-size:18px;
+}
+
+/* ===== BOOKING CARD ===== */
+
+.booking-card{
+    background:rgba(255,255,255,.96);
+    border-radius:30px;
+    padding:45px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+    backdrop-filter:blur(10px);
+}
+
+.booking-card h3{
+    margin-top:0;
+    margin-bottom:30px;
+    font-size:34px;
+    font-weight:800;
+    color:#111827;
+    font-family:'Montserrat',sans-serif;
+}
+
+/* FORM */
+.booking-form .form-group{
+    margin-bottom:20px;
+}
+
+.booking-form input,
+.booking-form textarea,
+.booking-form select{
+    width:100%;
+    border:none;
+    border-radius:16px;
+    padding:18px 20px;
+    background:#f3f4f6;
+    font-size:15px;
+    transition:all .35s ease;
+    outline:none;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus,
+.booking-form select:focus{
+    background:#fff;
+    box-shadow:
+        0 0 0 3px rgba(212,160,23,.18);
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+/* BUTTON */
+.booking-btn{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:50px;
+    background:#d4a017;
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:all .35s ease;
+    box-shadow:
+        0 10px 30px rgba(212,160,23,.3);
+}
+
+.booking-btn:hover{
+    transform:translateY(-4px);
+    background:#bf8f11;
+    box-shadow:
+        0 16px 40px rgba(212,160,23,.4);
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:992px){
+
+    .booking-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .booking-title{
+        font-size:44px;
+    }
+
+    .booking-card{
+        padding:30px;
+    }
+}
+
+@media(max-width:768px){
+
+    .booking-section{
+        padding:90px 20px;
+    }
+
+    .booking-title{
+        font-size:38px;
+    }
+
+    .booking-description{
+        font-size:16px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .booking-card h3{
+        font-size:28px;
+    }
+}
+
+/* ===== TEAM SECTION ===== */
+.team-section {
+  background: #fafafa;
+  overflow: hidden;
+}
+
+.team-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.team-card {
+  min-width: 200px;
+  flex: 0 0 auto;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.team-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #d4a017;
+  margin-bottom: 10px;
+}
+
+.team-card h4 {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.team-card p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Desktop grid */
+@media(min-width: 992px){
+  .team-container {
+    flex-wrap: wrap;
+    overflow: visible;
+    justify-content: center;
+  }
+
+  .team-card {
+    flex: 0 0 18%;
+  }
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background:#111;
+  color:#ccc;
+  padding:30px 20px;
+  text-align:center;
+}
+
+footer h4 { color:#fff; margin-bottom:10px; }
+
+
+ /* =========================================
+        
+    /* AMENITIES */
+
+    
+    .amenities{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .amenities div{background:#fafafa;border-radius:12px;padding:14px}
+    .amenities i{color:var(--gold);margin-right:8px}
+    @media(max-width:900px){.amenities{grid-template-columns:repeat(2,1fr)}}
+
+    /* GALLERY */
+    .gallery-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .gallery-grid img{width:100%;height:130px;object-fit:cover;border-radius:8px}
+    @media(max-width:768px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+
+    /* PARTNERS */
+    .partners{background:#0b0b0b;padding:34px 0;overflow:hidden}
+    .partner-track{display:flex;gap:50px;animation:scroll 22s linear infinite}
+    .partner-track img{height:56px;opacity:.85}
+    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* BOOKING */
+    .booking{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    .booking .panel{background:#fafafa;border-radius:16px;padding:20px}
+    .booking input,.booking textarea{width:100%;margin-bottom:10px;padding:10px;border-radius:8px;border:1px solid #ddd}
+    @media(max-width:900px){.booking{grid-template-columns:1fr}}
+
+    /* MAP */
+    .map-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .map-grid iframe,.map-grid img{width:100%;height:320px;border-radius:12px}
+    @media(max-width:900px){.map-grid{grid-template-columns:1fr}}
+
+    /* TEAM */
+    .team-container{display:flex;gap:20px;overflow-x:auto;padding-bottom:10px}
+    .team-card{min-width:200px;text-align:center;cursor:pointer}
+    .team-card img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--gold)}
+    @media(min-width:992px){.team-container{flex-wrap:wrap;overflow:visible;justify-content:center}.team-card{flex:0 0 18%}}
+
+    .team-modal{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:left;justify-content:center;color:#fff;z-index:2000;padding:20px}
+    .team-modal .content{max-width:700px;text-align:left}
+    .team-modal img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);margin-bottom:10px}
+
+    /* FOOTER */
+    footer{background:#0b0b0b;color:#bbb;padding:40px 20px;text-align:center}
+
+    /* UTIL */
+    .spacer{height:70px}
+    
+    </style>
+</head>
+<body>
+
+<!-- LANDING -->
+<div class="landing">
+
+  <div class="landing-overlay-content">
+
+    <h1 class="landing-title">
+      <span class="camp">Camp</span>
+      <span class="chita"> Chita</span>
+    </h1>
+
+    <div class="landing-subtitle">
+      Eco Tourism • Nature • Adventure
+    </div>
+
+    <button class="enter-btn" onclick="enterSite()">
+      Enter Experience
+    </button>
+
+  </div>
+
+</div>
+
+<div id="main" style="display:none">
+
+<nav class="navbar">
+
+    <div class="container nav-wrapper">
+
+        <!-- LOGO -->
+        <source><img src="images/Camp Chita Logo.png" height="70px" alt="camp Chita logo"><div class="navbar-brand">
+            Camp Chita Outdoors
+        </div>
+
+        <!-- MOBILE TOGGLE -->
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- NAVIGATION -->
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#about">About</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#booking">Book</a></li>
+            <li><a href="#team">Team</a></li>
+
+        </ul>
+
+    </div>
+
+</nav>
+<div class="spacer"></div>
+
+<!-- PARALLAX STACK -->
+
+<div class="parallax p1">
+  <div class="parallax-content">
+    <div class="parallax-activity">Welcome To</div>
+    <h1 class="parallax-title">
+      <span class="camp">Camp</span>
+      <span class="chita"> Chita</span>
+    </h1>
+    <div class="parallax-activity">Lets Adventure!</div>
+  </div>
+</div>
+
+<div class="parallax p2">
+  <div class="parallax-content">
+    <h1 class="parallax-title">
+      <span class="camp">Camp</span>
+      <span class="chita"> Chita</span>
+    </h1>
+    <div class="parallax-activity">Where You Camp Under the Stars</div>
+  </div>
+</div>
+
+<div class="parallax p3">
+  <div class="parallax-content">
+    <h1 class="parallax-title">
+      <span class="camp">Camp</span>
+      <span class="chita"> Chita</span>
+    </h1>
+    <div class="parallax-activity">& Climb Walls</div>
+  </div>
+</div>
+
+<div class="parallax p4">
+  <div class="parallax-content">
+    <h1 class="parallax-title">
+      <span class="camp">Camp</span>
+      <span class="chita"> Chita</span>
+    </h1>
+    <div class="parallax-activity">Cook Surrounded By Nature</div>
+  </div>
+</div>
+
+<div class="parallax p5">
+  <div class="parallax-content">
+    <h1 class="parallax-title">
+      <span class="camp">Camp</span>
+      <span class="chita"> Chita</span>
+    </h1>
+    <div class="parallax-activity">While Enjoying Wildlife Adventures</div>
+  </div>
+</div>
+
+<section id="about" style="padding: 60px 20px; background-color: #2b2a2a;">
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+    
+    <!-- Image Column -->
+    <div style="flex: 1; text-align: center;">
+      <img src="images/camp chita logo.png" alt="Camp Chita Logo" style="max-width: 250px; height: auto; border-radius: 8px;">
+    </div>
+    
+    <!-- Text Column -->
+    <div style="flex: 2; text-align: left;">
+      <h2 style="font-size: 2.2em; color: #f5c905; margin-bottom: 20px;">
+        About Camp Chita
+      </h2>
+      <p style="font-size: 1.1em; color: #f1efef; line-height: 1.8; margin-bottom: 30px;">
+        <strong>Where conservation meets comfort.</strong><br>
+        Nestled in the heart of Zambia’s breathtaking wilderness, <strong>Camp Chita</strong> is more than a campsite — it’s a sanctuary where nature, adventure, and community intertwine. Our eco‑tourism philosophy celebrates harmony between sustainability and serenity, offering guests an experience that’s both rejuvenating and responsible.
+      </p>
+
+      <h3 style="font-size: 1.5em; color: #f5c905; margin-bottom: 15px;">A Place to Belong</h3>
+      <p style="font-size: 1.05em; color: #f7f5f5; line-height: 1.7; margin-bottom: 25px;">
+        Whether you’re drawn by the thrill of exploration or the calm of the outdoors, Camp Chita provides a haven for every kind of traveler. Wake up to birdsong echoing through the valley, spend your days discovering hidden trails and river bends, and unwind under a canopy of stars beside a crackling campfire.
+      </p>
+
+      <h3 style="font-size: 1.5em; color: #f5c905; margin-bottom: 15px;">Experiences That Connect</h3>
+      <p style="font-size: 1.05em; color: #faf8f8; line-height: 1.7; margin-bottom: 25px;">
+        From guided hikes and river adventures to cultural storytelling and wildlife encounters, every moment here is designed to immerse you in Zambia’s natural rhythm. Our team’s commitment to conservation ensures that your stay not only connects you with the land but also helps preserve it for generations to come.
+      </p>
+
+      <h3 style="font-size: 1.5em; color: #f5c905; margin-bottom: 15px;">Our Promise</h3>
+      <p style="font-size: 1.05em; color: #f8f7f7; line-height: 1.7;">
+        At Camp Chita, you don’t just visit nature — you become part of it.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCES -->
+<section id="experiences" class="section-padding text-center">
+<div class="container">
+<div class="experience-header">
+
+    <div class="experience-tag">
+        Explore The Wild
+    </div>
+
+    <h2 class="experience-title">
+        Experiences At 
+        <span>Camp Chita</span>
+    </h2>
+
+    <p class="experience-intro">
+        Discover immersive eco-tourism experiences designed to reconnect you with nature, adventure, and Zambia’s breathtaking wilderness. From sunrise hikes and canoe expeditions to wildlife encounters and conservation activities, every journey at Camp Chita is crafted to inspire exploration and meaningful connection.
+    </p>
+
+</div>
+<div class="row">
+
+<div class="col-md-4">
+<div class="experience-card">
+<img src="images/news-image1.jpg">
+<div class="content">
+<h4>Eco Camping</h4>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="experience-card">
+<img src="images/Great Canoeing Expeditions.jpg">
+<div class="content">
+<h4>River Adventures</h4>
+
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+  <div class="experience-card">
+    <img src="images/001 (11).jpg">
+      <div class="content">
+        <h4>Interact With Nature</h4>
+        
+      </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="experience-card">
+    <img src="images/Hiking.jpg">
+      <div class="content">
+        <h4>Trek Nature Trails</h4>
+        
+      </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="experience-card">
+    <img src="images/Nature Photo.jpg">
+      <div class="content">
+        <h4>Nature Photography</h4>
+      </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="experience-card">
+    <img src="images/news-image8.jpg">
+      <div class="content">
+        <h4>Eco-Education for Kids</h4>
+      </div>
+      
+  </div>
+</div>
+
+<a href="activities.html" class="btn btn-primary">See Full List</a>
+
+</div>
+</div>
+</section>
+
+<!-- =========================================
+     AMENITIES SECTION
+========================================= -->
+
+<section class="amenities-section">
+
+  <div class="container-custom">
+
+    <div class="section-heading">
+
+      <div class="section-tag">
+        Camp Features
+      </div>
+
+      <h2 class="section-title">
+        Amenities &
+        <span>Facilities</span>
+      </h2>
+
+      <p class="section-text">
+        Camp Chita combines eco-conscious comfort with immersive outdoor experiences to create the perfect balance between adventure and relaxation.
+      </p>
+
+    </div>
+
+    <div class="amenities-grid">
+
+      <!-- ITEM -->
+      <div class="amenity-card">
+
+        <div class="amenity-icon">
+          <i class="fa fa-campground"></i>
+        </div>
+
+        <h3>Eco Campsites</h3>
+
+        <p>
+          Spacious eco-friendly camping spaces designed for comfort and sustainability.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="amenity-card">
+
+        <div class="amenity-icon">
+          <i class="fa fa-fire"></i>
+        </div>
+
+        <h3>Campfires</h3>
+
+        <p>
+          Evening campfire storytelling and social gathering experiences beneath the stars.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="amenity-card">
+
+        <div class="amenity-icon">
+          <i class="fa fa-shower"></i>
+        </div>
+
+        <h3>Hot Showers</h3>
+
+        <p>
+          Solar-powered hot shower facilities available throughout the campsite.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="amenity-card">
+
+        <div class="amenity-icon">
+          <i class="fa fa-water"></i>
+        </div>
+
+        <h3>River Access</h3>
+
+        <p>
+          Direct access to beautiful riverside experiences and water activities.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="amenity-card">
+
+        <div class="amenity-icon">
+          <i class="fa fa-utensils"></i>
+        </div>
+
+        <h3>Outdoor Dining</h3>
+
+        <p>
+          Enjoy locally inspired meals prepared within scenic outdoor environments.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="amenity-card">
+
+        <div class="amenity-icon">
+          <i class="fa fa-binoculars"></i>
+        </div>
+
+        <h3>Guided Tours</h3>
+
+        <p>
+          Professional guides for hiking, birdwatching, and wildlife experiences.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="amenity-card">
+
+        <div class="amenity-icon">
+          <i class="fa fa-leaf"></i>
+        </div>
+
+        <h3>Eco Conservation</h3>
+
+        <p>
+          Sustainable tourism practices supporting environmental protection initiatives.
+        </p>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="amenity-card">
+
+        <div class="amenity-icon">
+          <i class="fa fa-star"></i>
+        </div>
+
+        <h3>Stargazing</h3>
+
+        <p>
+          Incredible night skies perfect for astronomy and late-night relaxation.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALLERY PREVIEW SECTION -->
+<section id="gallery-preview" class="gallery-preview-section">
+
+    <div class="gallery-preview-overlay"></div>
+
+    <div class="container gallery-preview-content">
+
+        <div class="gallery-preview-tag">
+            Discover The Wild
+        </div>
+
+        <h2 class="gallery-preview-title">
+            Moments From 
+            <span>Camp Chita</span>
+        </h2>
+
+        <p class="gallery-preview-text">
+            Step into a world of breathtaking landscapes, riverside adventures,
+            unforgettable campfire nights, and authentic eco-tourism experiences
+            captured in the heart of Zambia’s wilderness.
+        </p>
+
+        <a href="gallery.html" class="gallery-preview-btn">
+            Explore Our Gallery
+            <i class="fa fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="booking-section">
+
+    <div class="booking-overlay"></div>
+
+    <div class="container">
+
+        <div class="booking-wrapper">
+
+            <!-- LEFT CONTENT -->
+            <div class="booking-content">
+
+                <div class="booking-tag">
+                    Reserve Your Escape
+                </div>
+
+                <h2 class="booking-title">
+                    Experience Nature At 
+                    <span>Camp Chita</span>
+                </h2>
+
+                <p class="booking-description">
+                    Whether you're planning a peaceful retreat, an outdoor adventure, or a group eco-tourism experience, Camp Chita offers a unique connection to Zambia’s breathtaking wilderness. Reserve your stay and begin your journey into nature.
+                </p>
+
+                <div class="booking-features">
+
+                    <div class="booking-feature">
+                        <i class="fa fa-tree"></i>
+                        <span>Eco-Friendly Camping</span>
+                    </div>
+
+                    <div class="booking-feature">
+                        <i class="fa fa-map"></i>
+                        <span>Guided Outdoor Experiences</span>
+                    </div>
+
+                    <div class="booking-feature">
+                        <i class="fa fa-fire"></i>
+                        <span>Campfires & Nature Retreats</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FORM -->
+            <div class="booking-card">
+
+                <h3>Make A Reservation</h3>
+
+                <form class="booking-form">
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <input type="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Guests</option>
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4+ Guests</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Tell us about your adventure..."></textarea>
+                    </div>
+
+                    <button type="submit" class="booking-btn">
+                        Reserve Experience
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MAP -->
+<section class="section-padding text-center">
+<div class="container">
+<h2>Location & Campsite Map</h2>
+<p>-14.880611, 29.692278 | Phone: +260 964564800 | E-mail:info.campchita@gmail.com</p>
+
+<div class="map-wrapper">
+
+    <!-- GOOGLE MAP -->
+    <div class="map-card">
+
+        <iframe 
+            src="https://maps.google.com/maps?q=-14.0410,28.9350&z=12&output=embed">
+        </iframe>
+
+        <a 
+          href="https://www.google.com/maps/dir/?api=1&destination=-14.0410,28.9350"
+          target="_blank"
+          class="btn btn-primary"
+        >
+          <i class="fa fa-location-arrow"></i>
+          Get Directions
+        </a>
+
+    </div>
+
+    <!-- SITE MAP -->
+    <div class="map-card">
+
+        <img src="images/site-map.jpg" alt="Camp Chita Site Map">
+
+        <a href="brochure.pdf" download class="btn btn-primary">
+            <i class="fa fa-download"></i>
+            Download Brochure
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="section text-center">
+  <div class="container">
+    <h2>Meet the Team</h2>
+        <h4 style="max-width:700px;margin:auto;">
+        Behind every experience at Camp Chita is a passionate team dedicated 
+        to conservation, community, and unforgettable outdoor adventures.
+        </h4>
+        <br> 
+        <br>
+
+    <div class="team-container">
+      <div class="team-card" onclick="openModal('Frank Chitalima','Director','images/team1.jpg')">
+        <img src="images/team1.jpg"><h4>Frank Chitalima</h4><p>Director</p>
+      </div>
+      <div class="team-card" onclick="openModal('Richard Chiko Mpamba','Camp Director','images/cheeks.png')">
+        <img src="images/team2.jpg"><h4>Richard Chiko Mpamba</h4><p>Camp Director</p>
+      </div>
+      <div class="team-card" onclick="openModal('Gwen Mulenga','Programs Manager','images/team3.jpg')">
+        <img src="images/team3.jpg"><h4>Gwen Mulenga</h4><p>Programs Manager</p>
+      </div>
+      <div class="team-card" onclick="openModal('Sarah Zamiwe Zimba','Volunteer & Events Coordinator','images/team4.jpg')">
+        <img src="images/team4.jpg"><h4>Sarah Zamiwe Zimba</h4><p>Volunteer & Events Coordinator</p>
+      </div>
+      <div class="team-card" onclick="openModal('Anderson Zulu','Senior Outdoor Instructor','images/team6.jpg')">
+        <img src="images/team6.jpg"><h4>Anderson Zulu</h4><p>Senior Outdoor Instructor</p>
+      </div>
+      <div class="team-card" onclick="openModal('Michael Mshoka','Community Engagement Officer','images/team5.jpg')">
+        <img src="images/team5.jpg"><h4>Michael Mshoka</h4><p>Communitiy Engagement Officer</p>
+      </div>
+      <div class="team-card" onclick="openModal('Eleanor Mwamba Sakala','Environmental Education Officer','images/team7.jpg')">
+        <img src="images/team7.jpg"><h4>Eleanor Mwamba Sakala</h4><p>Environmental Education Officer</p>
+      </div>
+      <div class="team-card" onclick="openModal('Sophty Brown','Media & Communications Coordinator','images/team8.jpg')">
+        <img src="images/team8.jpg"><h4>Sophty Brown</h4><p>Media & Communications Coordinator</p>
+      </div>
+      <div class="team-card" onclick="openModal('Davis Shula','Monitoring & Evaluation Coordinator','images/team9.jpg')">
+        <img src="images/team9.jpg"><h4>Davis Shula</h4><p>Monitoring & Evaluation Coordinator</p>
+      </div>
+      <div class="team-card" onclick="openModal('Phillip Sakala','Camp Caretaker','images/team10.jpg')">
+        <img src="images/team10.jpg"><h4>Phillip Sakala</h4><p>Camp Caretaker</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</div>
+
+<div class="team-modal" id="modal" onclick="closeModal()">
+  <div class="content" id="modalContent"></div>
+</div>
+
+<footer>
+  <h4>Camp Chita Outdoors</h4>
+  <p>Eco Tourism | Nature | Adventure</p>
+</footer>
+
+<script>
+function enterSite(){document.querySelector('.landing').style.display='none';document.getElementById('main').style.display='block'}
+function openModal(name,role,img){if(window.innerWidth>768){document.getElementById('modal').style.display='flex';document.getElementById('modalContent').innerHTML='<img src="'+img+'"><h2>'+name+'</h2><p>'+role+'</p><p>Full biography here...</p>'}}
+function closeModal(){document.getElementById('modal').style.display='none'}
+</script>
+
+<script>
+const parallaxText = document.querySelectorAll('.parallax-content');
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry,index)=>{
+
+        if(entry.isIntersecting){
+
+            setTimeout(()=>{
+                entry.target.classList.add('show');
+            }, index * 250);
+
+        }
+    });
+},{
+    threshold:0.35
+});
+
+parallaxText.forEach(item=>{
+    observer.observe(item);
+});
+</script>
+
+<script>
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', ()=>{
+
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+
+});
+
+/* CLOSE MENU WHEN LINK CLICKED */
+document.querySelectorAll('.nav-links a').forEach(link=>{
+
+    link.addEventListener('click', ()=>{
+
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+
+    });
+
+});
+
+</script>
+
+<script>
+
+/* ===== NAVBAR SCROLL EFFECT ===== */
+
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', ()=>{
+
+    if(window.scrollY > 40){
+
+        navbar.classList.add('navbar-scrolled');
+
+    }else{
+
+        navbar.classList.remove('navbar-scrolled');
+
+    }
+
+});
+
+/* ------------GALLERY SCRIPT--------------*/
+
+function updateDots(){
+
+    const counter = document.getElementById('lightboxCounter');
+
+    counter.innerHTML = '';
+
+    for(let i = 0; i < 5; i++){
+
+        const dot = document.createElement('div');
+
+        dot.classList.add('lightbox-dot');
+
+        if(i === currentIndex % 5){
+            dot.classList.add('active');
+        }
+
+        counter.appendChild(dot);
+    }
+}
+
+function showImage(index){
+
+    currentIndex = index;
+
+    lightboxImage.src = galleryImages[currentIndex].src;
+
+    updateDots();
+
+    lightbox.classList.add('active');
+
+    document.body.style.overflow = 'hidden';
+}
+
+function nextImage(){
+
+    currentIndex++;
+
+    if(currentIndex >= galleryImages.length){
+        currentIndex = 0;
+    }
+
+    lightboxImage.src = galleryImages[currentIndex].src;
+
+    updateDots();
+}
+
+function prevImage(){
+
+    currentIndex--;
+
+    if(currentIndex < 0){
+        currentIndex = galleryImages.length - 1;
+    }
+
+    lightboxImage.src = galleryImages[currentIndex].src;
+
+    updateDots();
+}
+
+</script>
+
+
+</body>
+</html>
